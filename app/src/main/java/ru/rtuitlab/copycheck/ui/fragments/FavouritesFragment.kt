@@ -20,12 +20,7 @@ class FavouritesFragment : Fragment(R.layout.fragment_favourites), HistoryAdapte
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewBinding.recyclerView.adapter = HistoryAdapter(
-            requireContext(),
-            viewModel.getHistory().filter { it.isFavourite }
-        ).apply {
-            setOnHistoryItemClickListener(this@FavouritesFragment)
-        }
+        initRecyclerView()
     }
 
     override fun onHistoryItemClick(copycheckResult: CopycheckResult) {
@@ -35,5 +30,17 @@ class FavouritesFragment : Fragment(R.layout.fragment_favourites), HistoryAdapte
 
     override fun onFavouriteToggle(historyItem: HistoryItem) {
         viewModel.changeFavourite(historyItem.copy())
+        val hiList = (viewBinding.recyclerView.adapter as HistoryAdapter).data
+        (viewBinding.recyclerView.adapter as HistoryAdapter).data = hiList.filter { it != historyItem }
+        viewBinding.recyclerView.adapter!!.notifyItemRemoved(hiList.indexOf(historyItem))
+    }
+
+    private fun initRecyclerView() {
+        viewBinding.recyclerView.adapter = HistoryAdapter(
+            requireContext(),
+            viewModel.getHistory().filter { it.isFavourite }
+        ).apply {
+            setOnHistoryItemClickListener(this@FavouritesFragment)
+        }
     }
 }

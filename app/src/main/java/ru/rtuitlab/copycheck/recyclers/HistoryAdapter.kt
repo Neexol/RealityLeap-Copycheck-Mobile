@@ -17,7 +17,7 @@ import ru.rtuitlab.copycheck.utils.HistoryItem
 
 class HistoryAdapter(
     private val context: Context,
-    private val data: List<HistoryItem>
+    var data: List<HistoryItem>
 ) : RecyclerView.Adapter<HistoryAdapter.HistoryItemHolder>() {
 
     override fun getItemCount() = data.size
@@ -46,7 +46,6 @@ class HistoryAdapter(
             favouriteIV.setOnClickListener {
                 data[adapterPosition].apply { isFavourite = !isFavourite }
                 this.bind(adapterPosition)
-//                notifyItemChanged(adapterPosition)
                 clickListener?.onFavouriteToggle(data[adapterPosition])
             }
         }
