@@ -51,6 +51,7 @@ dependencies {
     def retrofit_version = "2.6.2"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
 
     // Navigation
     def nav_version = "2.3.1"
@@ -63,9 +64,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
-    // Koin
-    def koin_version = "2.1.5"
-    implementation "org.koin:koin-android:$koin_version"
-    implementation "org.koin:koin-core:$koin_version"
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    // Progress buttons
+    def progress_buttons_version = "2.1.0"
+    implementation "com.github.razir.progressbutton:progressbutton:$progress_buttons_version"
 }

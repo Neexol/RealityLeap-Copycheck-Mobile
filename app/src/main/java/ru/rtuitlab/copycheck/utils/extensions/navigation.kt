@@ -1,4 +1,4 @@
-package ru.rtuitlab.copycheck.extensions
+package ru.rtuitlab.copycheck.utils.extensions
 
 import android.content.Intent
 import android.util.SparseArray

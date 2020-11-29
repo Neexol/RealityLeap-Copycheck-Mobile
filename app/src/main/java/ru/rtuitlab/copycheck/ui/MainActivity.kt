@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.rtuitlab.copycheck.R
-import ru.rtuitlab.copycheck.extensions.setupWithNavController
+import ru.rtuitlab.copycheck.utils.extensions.setupWithNavController
 
 class MainActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {

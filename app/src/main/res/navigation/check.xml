@@ -9,5 +9,14 @@
         android:id="@+id/checkFragment"
         android:name="ru.rtuitlab.copycheck.ui.fragments.CheckFragment"
         android:label="CheckFragment"
-        tools:layout="@layout/fragment_check"/>
+        tools:layout="@layout/fragment_check">
+        <action
+            android:id="@+id/action_checkFragment_to_songFragment"
+            app:destination="@id/songFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/songFragment"
+        android:name="ru.rtuitlab.copycheck.ui.fragments.SongFragment"
+        android:label="SongFragment"
+        tools:layout="@layout/fragment_song"/>
 </navigation>
