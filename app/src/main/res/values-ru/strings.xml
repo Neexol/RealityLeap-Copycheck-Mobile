@@ -12,4 +12,5 @@
     <string name="authors_holder">Автор(ы): %1$s</string>
     <string name="genre_holder">Жанр: %1$s</string>
     <string name="no_matches_found">Совпадений не найдено</string>
+    <string name="profile">Профиль</string>
 </resources>

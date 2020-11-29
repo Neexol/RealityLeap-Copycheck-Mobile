@@ -12,6 +12,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import ru.rtuitlab.copycheck.R
 import ru.rtuitlab.copycheck.databinding.FragmentSongBinding
 import ru.rtuitlab.copycheck.recyclers.MatchesRAOAdapter
+import ru.rtuitlab.copycheck.utils.HistoryItem
 import ru.rtuitlab.copycheck.viewmodels.MainViewModel
 
 
@@ -23,9 +24,7 @@ class SongFragment : Fragment(R.layout.fragment_song) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fillData()
-        viewBinding.toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressed()
-        }
+        setListeners()
     }
 
     private fun fillData() {
@@ -69,11 +68,27 @@ class SongFragment : Fragment(R.layout.fragment_song) {
         } else {
             viewBinding.matchesLabel.text = getString(R.string.no_matches_found)
         }
+        checkFavourite()
+    }
 
+    private fun setListeners() {
+        viewBinding.toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        viewBinding.favouriteImage.setOnClickListener {
+            viewModel.changeFavourite(HistoryItem(viewModel.selectedCopycheckResult.copy()))
+            checkFavourite()
+        }
+    }
+
+    private fun checkFavourite() {
+        val isFavourite = viewModel.getHistory().find {
+            it.copycheckResult == viewModel.selectedCopycheckResult
+        }!!.isFavourite
         viewBinding.favouriteImage.setImageDrawable(
             ContextCompat.getDrawable(
                 requireContext(),
-                if (ccResult.isFavourite) R.drawable.ic_star else R.drawable.ic_star_outline
+                if (isFavourite) R.drawable.ic_star else R.drawable.ic_star_outline
             )
         )
     }

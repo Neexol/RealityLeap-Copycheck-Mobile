@@ -9,5 +9,14 @@
         android:id="@+id/favouritesFragment"
         android:name="ru.rtuitlab.copycheck.ui.fragments.FavouritesFragment"
         android:label="FavouritesFragment"
-        tools:layout="@layout/fragment_favourites"/>
+        tools:layout="@layout/fragment_favourites">
+        <action
+            android:id="@+id/action_favouritesFragment_to_songFragment2"
+            app:destination="@id/songFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/songFragment2"
+        android:name="ru.rtuitlab.copycheck.ui.fragments.SongFragment"
+        android:label="SongFragment"
+        tools:layout="@layout/fragment_song"/>
 </navigation>

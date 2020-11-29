@@ -9,5 +9,14 @@
         android:id="@+id/historyFragment"
         android:name="ru.rtuitlab.copycheck.ui.fragments.HistoryFragment"
         android:label="HistoryFragment"
-        tools:layout="@layout/fragment_history"/>
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_historyFragment_to_songFragment3"
+            app:destination="@id/songFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/songFragment3"
+        android:name="ru.rtuitlab.copycheck.ui.fragments.SongFragment"
+        android:label="SongFragment"
+        tools:layout="@layout/fragment_song"/>
 </navigation>

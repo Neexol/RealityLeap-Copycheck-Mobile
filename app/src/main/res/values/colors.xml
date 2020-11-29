@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="card_color">#FF222222</color>
     <color name="main_blue">#FF00C2FF</color>
     <color name="full_reg">#FFE2544A</color>
     <color name="half_reg">#FFE2A64A</color>

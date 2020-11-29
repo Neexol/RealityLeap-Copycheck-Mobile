@@ -12,4 +12,5 @@
     <string name="genre_holder">Genre: %1$s</string>
     <string name="authors_holder">Author(s): %1$s</string>
     <string name="no_matches_found">No matches found</string>
+    <string name="profile">Profile</string>
 </resources>
