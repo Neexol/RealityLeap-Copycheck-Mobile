@@ -1,1 +1,1 @@
-﻿# WORK IN PROGRESS
+﻿[Download app apk](https://github.com/Neexol/RealityLeap-Copycheck-Mobile/releases)
