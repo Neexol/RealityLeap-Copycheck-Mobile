@@ -6,6 +6,7 @@ import androidx.activity.result.contract.ActivityResultContracts.GetContent
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import ru.rtuitlab.copycheck.R
 import ru.rtuitlab.copycheck.databinding.FragmentCheckBinding
@@ -97,6 +98,7 @@ class CheckFragment : Fragment(R.layout.fragment_check) {
     }
 
     private fun navigateToSongInfo(copycheckResult: CopycheckResult) {
-        requireContext().showShortToast(copycheckResult.recognitionResult.result.artist)
+        viewModel.selectedCopycheckResult = copycheckResult
+        findNavController().navigate(R.id.action_checkFragment_to_songFragment)
     }
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="16dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/rao_title_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            app:drawableStartCompat="@drawable/ic_music_note"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            tools:text="ANT MAN THEME FILM CUE AVENGERS ENDGAME"/>
+
+        <TextView
+            android:id="@+id/genre_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            tools:text="Жанр: ПЬЕСА ИНСТРУМЕНТАЛЬНАЯ"/>
+
+        <TextView
+            android:id="@+id/authors_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            tools:text="Автор(ы): BECK CHRISTOPHE (АТК), SILVESTRI ALAN (АТК)"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

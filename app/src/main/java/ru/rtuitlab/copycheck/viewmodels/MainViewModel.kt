@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import ru.rtuitlab.copycheck.models.CopycheckResult
 import ru.rtuitlab.copycheck.server.ServerRepository
 import ru.rtuitlab.copycheck.server.handle.Resource
 import ru.rtuitlab.copycheck.utils.SingleLiveEvent
@@ -44,4 +45,6 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     fun resetUriSelect() {
         selectedUri = null
     }
+
+    lateinit var selectedCopycheckResult: CopycheckResult
 }

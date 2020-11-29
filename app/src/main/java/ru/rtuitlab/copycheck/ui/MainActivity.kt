@@ -1,7 +1,10 @@
 package ru.rtuitlab.copycheck.ui
 
+import android.content.Context
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.rtuitlab.copycheck.R
 import ru.rtuitlab.copycheck.utils.extensions.setupWithNavController
@@ -26,13 +29,12 @@ class MainActivity : AppCompatActivity() {
 		)
 	}
 
-	fun navigateButtonVisible(isVisible: Boolean) = supportActionBar?.run {
-		setDisplayHomeAsUpEnabled(isVisible)
-		setDisplayShowHomeEnabled(isVisible)
-	}
-
-	override fun onSupportNavigateUp() = run {
-		onBackPressed()
-		true
+	fun enableNavigateButton(toolbar: Toolbar) {
+		toolbar.setNavigationIcon(R.drawable.ic_arrow)
+		toolbar.setNavigationOnClickListener {
+			onBackPressed()
+			(getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)
+				?.hideSoftInputFromWindow(it.windowToken, 0)
+		}
 	}
 }

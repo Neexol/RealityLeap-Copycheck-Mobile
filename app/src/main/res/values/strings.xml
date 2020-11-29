@@ -7,4 +7,9 @@
     <string name="check">Check</string>
     <string name="reselect_file">Select other file</string>
     <string name="not_recognize_song">Couldn\'t recognize the song</string>
+    <string name="details">Details</string>
+    <string name="found_matches">Found matches:</string>
+    <string name="genre_holder">Genre: %1$s</string>
+    <string name="authors_holder">Author(s): %1$s</string>
+    <string name="no_matches_found">No matches found</string>
 </resources>

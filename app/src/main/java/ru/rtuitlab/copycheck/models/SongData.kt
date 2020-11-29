@@ -9,5 +9,5 @@ data class SongData(
     @SerializedName("release_date") val releaseDate: String,
     @SerializedName("label") val label: String,
     @SerializedName("timecode") val timeCode: String,
-    @SerializedName("song_link") val songLink: String
+    @SerializedName("song_link") val songLink: String?
 )

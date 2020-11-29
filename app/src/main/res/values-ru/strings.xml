@@ -7,4 +7,9 @@
     <string name="check">Проверить</string>
     <string name="reselect_file">Выбрать другой файл</string>
     <string name="not_recognize_song">Не получилось распознать аудио</string>
+    <string name="details">Детали</string>
+    <string name="found_matches">Найденные совпадения:</string>
+    <string name="authors_holder">Автор(ы): %1$s</string>
+    <string name="genre_holder">Жанр: %1$s</string>
+    <string name="no_matches_found">Совпадений не найдено</string>
 </resources>
